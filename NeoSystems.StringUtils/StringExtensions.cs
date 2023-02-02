@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeoSystems.Tools
+namespace NeoSystems.StringUtils
 {
 
     /// <summary>
