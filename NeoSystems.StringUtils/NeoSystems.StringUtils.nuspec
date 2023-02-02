@@ -5,39 +5,39 @@
         <id>NeoSystems.StringUtils</id>
 
         <!-- Package version number that is used when resolving dependencies -->
-        <version>1.0.2</version>
+        <version>1.0.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Armand Jordaan</authors>
 
-        <!-- 
+        <!--
             Owners are typically nuget.org identities that allow gallery
-            users to easily find other packages by the same owners.  
+            users to easily find other packages by the same owners.
         -->
-        <owners>armandJordaan</owners>
-        
-         <!-- Project URL provides a link for the gallery -->
+        <owners>ArmandJordaan</owners>
+
+        <!-- Project URL provides a link for the gallery -->
         <projectUrl>https://github.com/neosystemsptyltd/NeoSystems.StringUtils</projectUrl>
 
-         <!-- License information is displayed on the gallery -->
+        <!-- License information is displayed on the gallery -->
         <license type="expression">MIT</license>
-        
 
-        <!-- Icon is used in Visual Studio's package manager UI 
+
+        <!-- Icon is used in Visual Studio's package manager UI
         <icon>icon.png</icon> -->
 
-        <!-- 
+        <!--
             If true, this value prompts the user to accept the license when
-            installing the package. 
+            installing the package.
         -->
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
         <!-- Any details about this particular release -->
         <releaseNotes>First Version</releaseNotes>
 
-        <!-- 
+        <!--
             The description can be used in package manager UI. Note that the
-            nuget.org gallery uses information you add in the portal. 
+            nuget.org gallery uses information you add in the portal.
         -->
         <description>.NET String utilities</description>
 
@@ -47,13 +47,13 @@
         <!-- Tags appear in the gallery and can be used for tag searches -->
         <tags>string utilities extensions</tags>
 
-        <!-- Dependencies are automatically installed when the package is installed 
+        <!-- Dependencies are automatically installed when the package is installed
         <dependencies>
             <dependency id="Newtonsoft.Json" version="9.0" />
         </dependencies> -->
     </metadata>
 
-    <!-- A readme.txt to display when the package is installed 
+    <!-- A readme.txt to display when the package is installed
     <files>
         <file src="readme.txt" target="" />
         <file src="icon.png" target="" />

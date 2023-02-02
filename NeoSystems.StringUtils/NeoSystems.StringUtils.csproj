@@ -7,10 +7,10 @@
     <DocumentationFile>bin\$(Configuration)\net6.0\StringUtils.xml</DocumentationFile>
 
     <PackageId>NeoSystems.StringUtils</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Armand Jordaan</Authors>
     <Company>Neo Systems (Pty) Ltd</Company>
-    
+    <projectUrl>https://github.com/neosystemsptyltd/NeoSystems.StringUtils</projectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
