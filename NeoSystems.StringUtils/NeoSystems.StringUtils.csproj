@@ -5,6 +5,12 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\$(Configuration)\net6.0\StringUtils.xml</DocumentationFile>
+
+    <PackageId>NeoSystems.StringUtils</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Armand Jordaan</Authors>
+    <Company>Neo Systems (Pty) Ltd</Company>
+    
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
