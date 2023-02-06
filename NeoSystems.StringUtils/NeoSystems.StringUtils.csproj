@@ -7,7 +7,7 @@
     <DocumentationFile>bin\$(Configuration)\net6.0\StringUtils.xml</DocumentationFile>
 
     <PackageId>NeoSystems.StringUtils</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>Armand Jordaan</Authors>
     <Company>Neo Systems (Pty) Ltd</Company>
     <ProjectUrl>https://github.com/neosystemsptyltd/NeoSystems.StringUtils</ProjectUrl>
