@@ -152,16 +152,30 @@ namespace NeoSystems.StringUtils
         }
 
         /// <summary>
-        /// Remove all occurences of the character r in the string
+        /// Remove all occurrences of the character r in the string
         /// </summary>
         /// <param name="s">string object ref</param>
-        /// <param name="r">char to remove</param>
-        /// <returns>string</returns>
-        public static string RemoveAll(this string s, char r)
+        /// <param name="c">char to remove</param>
+        /// <returns>string where all occurrences of c was removed</returns>
+        public static string RemoveAll(this string s, char c)
         {
-            string t = r.ToString();
+            return s.Replace(c.ToString(), "");
+        }
 
-            return t;
+        /// <summary>
+        /// Remove all occurrences of the characters in the array c in the string
+        /// </summary>
+        /// <param name="s">Original string</param>
+        /// <param name="c">array of chars to remove</param>
+        /// <returns>string with chars removed</returns>
+        public static string RemoveAll(this string s, char[] c)
+        {
+            foreach (char ch in c)
+            {
+                s = s.Replace(ch.ToString(), "");
+            }
+
+            return s;
         }
 
         /// <summary>

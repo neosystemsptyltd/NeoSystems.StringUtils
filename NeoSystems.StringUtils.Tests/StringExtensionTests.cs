@@ -95,6 +95,29 @@ public class StringExtensionTests
             Assert.AreEqual(expected, result);
         }
     }
+
+    // Test 1
+    [Test]
+    public void RemoveAll_ShouldReplaceCharSuccessfully() 
+    {
+        string expected = "abcd";
+        string str = "a-b-c-d";
+        char c = '-';
+        string actual = str.RemoveAll(c);
+        Assert.AreEqual(expected, actual);
+    }
+
+    // Test 2
+    [Test]
+    public void RemoveAll_ShouldReplaceMultipleCharsSuccessfully() 
+    {
+        string expected = "abcd";
+        string str = "a*b-c_d";
+        char[] chars = new char[] { '*', '-', '_' };
+        string actual = str.RemoveAll(chars);
+        Assert.AreEqual(expected, actual);
+    }
+
 }
 
 
