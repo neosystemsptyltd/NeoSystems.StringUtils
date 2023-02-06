@@ -115,6 +115,43 @@ namespace NeoSystems.StringUtils
         }
 
         /// <summary>
+        /// Count the number of occurrences of a character in a string
+        /// </summary>
+        /// <param name="source">string to check</param>
+        /// <param name="c">char to count</param>
+        /// <returns>number of times c occurs in the string</returns>
+        public static int Count(this string source, char c)
+        {
+            int count = 0;
+
+            foreach (char ch in source)
+            {
+                if (ch == c)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        /// <summary>
+        /// Check if a string is a valid email address
+        /// </summary>
+        /// <param name="source">String to check</param>
+        /// <returns>true if string is an email address, false if not</returns>
+        public static bool IsEmail(this string source)
+        {
+            string emailRegex = @"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+
+            // check if source is a Regex match for emailRegex
+            bool result = System.Text.RegularExpressions.Regex.IsMatch(source, emailRegex);
+            result = result && source.Count('@') == 1; // check if there is only one @ in the string
+
+            return result;
+        }
+
+        /// <summary>
         /// Remove all occurences of the character r in the string
         /// </summary>
         /// <param name="s">string object ref</param>
