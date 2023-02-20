@@ -282,5 +282,30 @@ namespace NeoSystems.StringUtils
 
             Comment(lines, commentstringFront, commentstringBack);
         }
+
+        /// <summary>
+        /// Removes one newline from end of a String if it's there, otherwise leave it alone.
+        /// A newline is "\n", "\r", or "\r\n".
+        /// </summary>
+        /// <param name="s">string</param>
+        /// <returns>string</returns>
+        public static string Chomp(this string s)
+        {
+            if (string.IsNullOrEmpty(s))
+            {
+                return s;
+            }
+
+            int length = s.Length;
+            int i = length - 1;
+
+            while (i >= 0 && (s[i] == '\n' || s[i] == '\r'))
+            {
+                i--;
+            }
+
+            return s.Substring(0, i + 1);
+        }
     }
+
 }

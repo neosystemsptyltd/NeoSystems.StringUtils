@@ -118,6 +118,55 @@ public class StringExtensionTests
         Assert.AreEqual(expected, actual);
     }
 
+    [Test]
+    public void Chomp_WithNewLines_ReturnsStringWithNewLinesAndcarriageReturnRemoved()
+    {
+        // arrange
+        string input = "Hello\n\r";
+        string expected = "Hello";
+        // act
+        string actual = input.Chomp();
+        // assert
+        Assert.AreEqual(expected, actual);
+    }
+
+    [Test]
+    public void Chomp_WithNewLines_ReturnsStringWithNewLinesRemoved()
+    {
+        // arrange
+        string input = "Hello\n";
+        string expected = "Hello";
+        // act
+        string actual = input.Chomp();
+        // assert
+        Assert.AreEqual(expected, actual);
+    }
+
+    [Test]
+    public void Chomp_WithCarriageReturns_ReturnsStringWithCarriageReturnRemoved()
+    {
+        // arrange
+        string input = "Hello\r";
+        string expected = "Hello";
+        // act
+        string actual = input.Chomp();
+        // assert
+        Assert.AreEqual(expected, actual);
+    }
+
+    [Test]
+    public void Chomp_WithEmptyString_ReturnsEmptyString()
+    {
+        // arrange
+        string input = "";
+        string expected = "";
+        // act
+        string actual = input.Chomp();
+        // assert
+        Assert.AreEqual(expected, actual);
+    }
+
+
 }
 
 
