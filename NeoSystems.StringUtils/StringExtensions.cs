@@ -306,6 +306,24 @@ namespace NeoSystems.StringUtils
 
             return s.Substring(0, i + 1);
         }
+
+        /// <summary>
+        /// Check if a string contains only numbers
+        /// </summary>
+        /// <param name="s">string to check</param>
+        /// <returns>true if string is only numbers, false if it contains other characters</returns>
+        public static bool IsNumericsOnly(this string s)
+        {
+            foreach (char c in s)
+            {
+                if (!char.IsNumber(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 
 }

@@ -166,7 +166,24 @@ public class StringExtensionTests
         Assert.AreEqual(expected, actual);
     }
 
+    [Test]
+    public void IsNumericsOnlyTest()
+    {
+        // Arrange
+        var inputString1 = "1234566";
+        var inputString2 = "123a566";
+        var inputString3 = "abcd";
 
+        // Act
+        var result1 = inputString1.IsNumericsOnly();
+        var result2 = inputString2.IsNumericsOnly();
+        var result3 = inputString3.IsNumericsOnly();
+
+        // Assert
+        Assert.IsTrue(result1);
+        Assert.IsFalse(result2);
+        Assert.IsFalse(result3);
+    }
 }
 
 
