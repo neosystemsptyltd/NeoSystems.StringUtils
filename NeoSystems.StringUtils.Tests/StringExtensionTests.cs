@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace NeoSystems.StringUtils.Tests;
@@ -98,7 +100,7 @@ public class StringExtensionTests
 
     // Test 1
     [Test]
-    public void RemoveAll_ShouldReplaceCharSuccessfully() 
+    public void RemoveAll_ShouldReplaceCharSuccessfully()
     {
         string expected = "abcd";
         string str = "a-b-c-d";
@@ -109,7 +111,7 @@ public class StringExtensionTests
 
     // Test 2
     [Test]
-    public void RemoveAll_ShouldReplaceMultipleCharsSuccessfully() 
+    public void RemoveAll_ShouldReplaceMultipleCharsSuccessfully()
     {
         string expected = "abcd";
         string str = "a*b-c_d";
@@ -184,6 +186,103 @@ public class StringExtensionTests
         Assert.IsFalse(result2);
         Assert.IsFalse(result3);
     }
+
+    // IsEqualToAnyOf Test
+    [Test]
+    public void IsEqualToAnyOf_ShouldReturnTrue_WithSingleMatch()
+    {
+        string[] toCheckArr = { "test1", "test2", "test3" };
+        bool result = "test1".IsEqualToAnyOf(toCheckArr);
+        Assert.AreEqual(true, result);
+    }
+
+    // IsEqualToAnyOf Test
+    [Test]
+    public void IsEqualToAnyOf_ShouldReturnFalse_WithNoMatches()
+    {
+        string[] toCheckArr = { "test1", "test2", "test3" };
+        bool result = "test4".IsEqualToAnyOf(toCheckArr);
+        Assert.AreEqual(false, result);
+    }
+
+    // IsEqualToAnyOf Test
+    [Test]
+    public void IsEqualToAnyOf_ShouldReturnTrue_WithMultipleMatches()
+    {
+        string[] toCheckArr = { "test1", "test2", "test2" };
+        bool result = "test2".IsEqualToAnyOf(toCheckArr);
+        Assert.AreEqual(true, result);
+    }
+
+    [Test]
+    public void IsEqualToAnyOf_test()
+    {
+        string[] arrayToTest = { "one", "two", "three"};
+        string compareToString = "One";
+
+        //Test Default StringComparison
+        Assert.IsFalse(compareToString.IsEqualToAnyOf(arrayToTest));
+
+        // Test non-default StringComparison
+        Assert.IsTrue(compareToString.IsEqualToAnyOf(arrayToTest, StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Test]
+    public void IsEqualToAnyOf_WhenSourceExists_ReturnsTrue()
+    {
+        // Arrange
+        var source = "test";
+        var list = new List<string>(){"test", "test2"};
+
+        // Act
+        bool result = source.IsEqualToAnyOf(list);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsEqualToAnyOf_WhenSourceDoesntExists_ReturnsFalse()
+    {
+        // Arrange
+        var source = "test";
+        var list = new List<string>() { "test2", "test3" };
+
+        // Act
+        bool result = source.IsEqualToAnyOf(list);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsEqualToAnyOf_ValuesInList_ReturnsTrue()
+    {
+        // Arrange
+        List<string> checkList = new List<string> { "value1", "value2" };
+        string source = "value2";
+
+        // Act
+        bool result = source.IsEqualToAnyOf(checkList, StringComparison.Ordinal);
+
+        // Assert
+        Assert.True(result);
+    }
+
+    [Test]
+    public void IsEqualToAnyOf_ValueNotInList_ReturnsFalse()
+    {
+        // Arrange
+        List<string> checkList = new List<string> { "value1", "value2" };
+        string source = "value3";
+
+        // Act
+        bool result = source.IsEqualToAnyOf(checkList, StringComparison.Ordinal);
+
+        // Assert
+        Assert.False(result);
+    }
+
 }
 
 

@@ -104,6 +104,84 @@ namespace NeoSystems.StringUtils
         }
 
         /// <summary>
+        /// Check if a string is equal to any of the strings in the array
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="toCheckArr"></param>
+        /// <returns></returns>
+        public static bool IsEqualToAnyOf(this string source, string[] toCheckArr)
+        {
+            foreach (string s in toCheckArr)
+            {
+                if (source.Equals(s))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check if a string is equal to any of the strings in the array, using the specified comparison type.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="toCheckArr"></param>
+        /// <param name="comp"></param>
+        /// <returns></returns>
+        public static bool IsEqualToAnyOf(this string source, string[] toCheckArr, StringComparison comp)
+        {
+            foreach (string s in toCheckArr)
+            {
+                if (source.Equals(s, comp))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check if a string is equal to any of the strings in the list
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="toCheckList"></param>
+        /// <returns></returns>
+        public static bool IsEqualToAnyOf(this string source, List<string> toCheckList)
+        {
+            foreach (string s in toCheckList)
+            {
+                if (source.Equals(s))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check if a string is equal to any of the strings in the list, using the specified comparison type.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="toCheckList"></param>
+        /// <param name="comp"></param>
+        /// <returns></returns>
+        public static bool IsEqualToAnyOf(this string source, List<string> toCheckList, StringComparison comp)
+        {
+            foreach (string s in toCheckList)
+            {
+                if (source.Equals(s, comp))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        /// <summary>
         /// test if a string contains ASCII characters only
         /// </summary>
         /// <param name="source"></param>
