@@ -5,7 +5,7 @@
         <id>NeoSystems.StringUtils</id>
 
         <!-- Package version number that is used when resolving dependencies -->
-        <version>1.0.8</version>
+        <version>1.0.10</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Armand Jordaan</authors>
@@ -33,7 +33,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
         <!-- Any details about this particular release -->
-        <releaseNotes>First Version</releaseNotes>
+        <releaseNotes>Latest Release for .NET 8.0</releaseNotes>
 
         <!--
             The description can be used in package manager UI. Note that the
@@ -42,16 +42,12 @@
         <description>.NET String utilities</description>
 
         <!-- Copyright information -->
-        <copyright>Copyright ©2023 Neo Systems</copyright>
+        <copyright>Copyright ©2025 Neo Systems</copyright>
 
         <!-- Tags appear in the gallery and can be used for tag searches -->
         <tags>string utilities extensions</tags>
-
-        <!-- Dependencies are automatically installed when the package is installed
-        <dependencies>
-            <dependency id="Newtonsoft.Json" version="9.0" />
-        </dependencies> -->
-    </metadata>
+\
+\    </metadata>
 
     <!-- A readme.txt to display when the package is installed
     <files>
