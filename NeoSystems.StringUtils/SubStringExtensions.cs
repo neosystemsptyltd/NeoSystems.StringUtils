@@ -1,4 +1,4 @@
-﻿/* License: GLPLV3 - See License.txt */
+﻿/* License: MIT - See License.txt */
 
 using System;
 using System.Collections.Generic;

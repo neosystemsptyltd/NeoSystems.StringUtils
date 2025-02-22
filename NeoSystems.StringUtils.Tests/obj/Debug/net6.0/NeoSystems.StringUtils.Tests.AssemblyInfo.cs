@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeoSystems.StringUtils.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eee7463049d7732ad9ddc58062471a36045568e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeoSystems.StringUtils.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeoSystems.StringUtils.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -402,6 +402,16 @@ namespace NeoSystems.StringUtils
 
             return true;
         }
+
+        /// <summary>
+        /// Converts a string to a valid identifier name for use in most coding languages
+        /// </summary>
+        /// <param name="s">string to convert</param>
+        /// <returns>string of which non identifier characters have been converted to _ (underscore)</returns>
+        public static string ToIdentifier(this string s)
+        {
+            return StringUtils.StringToIdentifier(s);
+        }
     }
 
 }

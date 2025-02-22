@@ -35,7 +35,7 @@ Console.WriteLine(between); // Output: "my good"
 
 ## Documentation
 
-Full documentation and API reference can be found on the project website.
+Full documentation and API reference can be found under the docs folder (NeoSystems.StringUtils/docs).
 
 ## Contributing
 

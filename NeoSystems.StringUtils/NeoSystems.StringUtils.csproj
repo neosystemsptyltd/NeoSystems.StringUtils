@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>bin\$(Configuration)\net6.0\StringUtils.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\net8.0\StringUtils.xml</DocumentationFile>
 
     <PackageId>NeoSystems.StringUtils</PackageId>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
     <Authors>Armand Jordaan</Authors>
     <Company>Neo Systems (Pty) Ltd</Company>
     <ProjectUrl>https://github.com/neosystemsptyltd/NeoSystems.StringUtils/</ProjectUrl>
@@ -16,7 +16,7 @@
     <PublishProjectUrl>true</PublishProjectUrl>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>

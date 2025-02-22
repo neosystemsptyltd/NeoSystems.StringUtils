@@ -121,7 +121,7 @@ public class StringExtensionTests
     }
 
     [Test]
-    public void Chomp_WithNewLines_ReturnsStringWithNewLinesAndcarriageReturnRemoved()
+    public void Chomp_WithNewLines_ReturnsStringWithNewLinesAndCarriageReturnRemoved()
     {
         // arrange
         string input = "Hello\n\r";
@@ -282,6 +282,42 @@ public class StringExtensionTests
         // Assert
         Assert.False(result);
     }
+
+    [Test]
+    public void ToIdentifier_ShouldReturnExpectedIdentifier_ForValidInput()
+    {
+        // Arrange
+        string input = "Valid Input";
+        string expectedOutput = "Valid_Input"; // Assuming underscores replace spaces
+
+        // Act
+        string result = input.ToIdentifier();
+
+        // Assert
+        Assert.AreEqual(expectedOutput, result);
+    }
+
+    [Test]
+    public void ToIdentifier_ShouldHandleEmptyString()
+    {
+        // Arrange & Act & Assert
+        Assert.AreEqual(string.Empty, string.Empty.ToIdentifier());
+    }
+
+    [Test]
+    public void ToIdentifier_ShouldHandleSpecialCharacters()
+    {
+        // Arrange
+        string input = "Special@Chars!";
+        string expectedOutput = "Special_Chars_"; // Assuming special characters are removed or replaced
+
+        // Act
+        string result = input.ToIdentifier();
+
+        // Assert
+        Assert.AreEqual(expectedOutput, result);
+    }
+
 
 }
 
