@@ -318,7 +318,165 @@ public class StringExtensionTests
         Assert.AreEqual(expectedOutput, result);
     }
 
+    [Test]
+    public void IsAlphaNumeric_WithLettersOnly_ReturnsTrue()
+    {
+        // Arrange
+        string input = "HelloWorld";
 
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsAlphaNumeric_WithDigitsOnly_ReturnsTrue()
+    {
+        // Arrange
+        string input = "123456";
+
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsAlphaNumeric_WithLettersAndDigits_ReturnsTrue()
+    {
+        // Arrange
+        string input = "Hello123";
+
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsAlphaNumeric_WithSpecialCharacters_ReturnsFalse()
+    {
+        // Arrange
+        string input = "Hello@123";
+
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsAlphaNumeric_EmptyString_ReturnsTrue()
+    {
+        // Arrange
+        string input = "";
+
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsAlphaNumeric_WithWhitespace_ReturnsFalse()
+    {
+        // Arrange
+        string input = "Hello 123";
+
+        // Act
+        bool result = input.IsAlphaNumeric();
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsUsername_WithValidLengthAndCharacters_ReturnsTrue()
+    {
+        // Arrange
+        string input = "User_123";
+
+        // Act
+        bool result = input.IsUsername();
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsUsername_WithTooShortUsername_ReturnsFalse()
+    {
+        // Arrange
+        string input = "User";
+
+        // Act
+        bool result = input.IsUsername();
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsUsername_WithTooLongUsername_ReturnsFalse()
+    {
+        // Arrange
+        string input = "ThisIsAVeryLongUsername123";
+
+        // Act
+        bool result = input.IsUsername();
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsUsername_WithSpecialCharacters_ReturnsFalse()
+    {
+        // Arrange
+        string input = "User!@#";
+
+        // Act
+        bool result = input.IsUsername();
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+
+    [Test]
+    public void IsUsername_WithValidCustomLength_ReturnsTrue()
+    {
+        // Arrange
+        string input = "Usr";
+        int minLength = 3;
+        int maxLength = 10;
+
+        // Act
+        bool result = input.IsUsername(minLength, maxLength);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void IsUsername_WithInvalidCustomLength_ReturnsFalse()
+    {
+        // Arrange
+        string input = "TooLongUsername";
+        int minLength = 5;
+        int maxLength = 10;
+
+        // Act
+        bool result = input.IsUsername(minLength, maxLength);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
 }
 
 
