@@ -180,7 +180,50 @@ namespace NeoSystems.StringUtils
 
             return false;
         }
-        
+
+        /// <summary>
+        /// Check if a string only consists of alphabetic and numeric characters
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>true if its alpha numeric, false if not</returns>
+        public static bool IsAlphaNumeric(this string source)
+        {
+            foreach (char c in source)
+            {
+                if (!char.IsLetterOrDigit(c))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Check if the string is a valid username
+        /// </summary>
+        /// <param name="source">string to check</param>
+        /// <param name="minLength">minimum length of the username</param>
+        /// <param name="maxLength">maximum length of the username</param>
+        /// <returns></returns>
+        public static bool IsUsername(this string source, int minLength = 5, int maxLength = 20)
+        {
+            if (source.Length < minLength || source.Length > maxLength)
+            {
+                return false;
+            }
+
+            foreach (char c in source)
+            {
+                if (!char.IsLetterOrDigit(c) && c != '_')
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// test if a string contains ASCII characters only
         /// </summary>
